@@ -4,18 +4,52 @@
 #
 
 [spines]
-spine01
-spine02
+spine01.p01
+spine02.p01
+spine03.p01
+spine04.p01
+spine05.p01
+spine06.p01
+spine07.p01
+spine08.p01
+spine01.p02
+spine02.p02
+spine03.p02
+spine04.p02
+spine05.p02
+spine06.p02
+spine07.p02
+spine08.p02
+
 
 [leafs]
-leaf01
-leaf02
-leaf03
-leaf04
+leaf01.p01
+leaf02.p01
+leaf03.p01
+leaf04.p01
+leaf05.p01
+leaf06.p01
+leaf07.p01
+leaf08.p01
+leaf01.p02
+leaf02.p02
+leaf03.p02
+leaf04.p02
+leaf05.p02
+leaf06.p02
+leaf07.p02
+leaf08.p02
+
+[tors]
+tor01.p01
+tor02.p01
+tor01.p02
+tor02.p02
 
 [switches:children]
 spines
 leafs
+tors
 
 #-------------------------------------------------------------------------------
 #
@@ -23,10 +57,10 @@ leafs
 #
 
 [servers]
-server01
-server02
-server03
-server04
+server01.p01
+server02.p01
+server01.p02
+server02.p02
 
 #-------------------------------------------------------------------------------
 #
