@@ -73,7 +73,7 @@ network leaf06.p01 eth0 192.168.1.16 255.255.0.0
 network leaf07.p01 eth0 192.168.1.17 255.255.0.0
 network leaf08.p01 eth0 192.168.1.18 255.255.0.0
 network tor01.p01 eth0 192.168.1.21 255.255.0.0
-network tor02.p01 eth0 192.168.1.21 255.255.0.0
+network tor02.p01 eth0 192.168.1.22 255.255.0.0
 network server01.p01 eth0 192.168.1.31 255.255.0.0
 network server02.p01 eth0 192.168.1.32 255.255.0.0
 
@@ -94,7 +94,7 @@ network leaf06.p02 eth0 192.168.2.16 255.255.0.0
 network leaf07.p02 eth0 192.168.2.17 255.255.0.0
 network leaf08.p02 eth0 192.168.2.18 255.255.0.0
 network tor01.p02 eth0 192.168.2.21 255.255.0.0
-network tor02.p02 eth0 192.168.2.21 255.255.0.0
+network tor02.p02 eth0 192.168.2.22 255.255.0.0
 network server01.p02 eth0 192.168.2.31 255.255.0.0
 network server02.p02 eth0 192.168.2.32 255.255.0.0
 
