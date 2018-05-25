@@ -1,15 +1,42 @@
-
 vm oob-mgmt-server netq-1.3.0 2 10 40
-vm leaf01 cumulus-vx-3.5.3 1 2 2
-vm leaf02 cumulus-vx-3.5.3 1 2 2
-vm leaf03 cumulus-vx-3.5.3 1 2 2
-vm leaf04 cumulus-vx-3.5.3 1 2 2
-vm spine01 cumulus-vx-3.5.3 1 2 2
-vm spine02 cumulus-vx-3.5.3 1 2 2
-vm server01 ubuntu-16.04 2 4 4
-vm server02 ubuntu-16.04 2 4 4
-vm server03 ubuntu-16.04 2 4 4
-vm server04 ubuntu-16.04 2 4 4
+
+vm spine01.p01 cumulus-vx-3.4.3 1 2 2
+vm spine02.p01 cumulus-vx-3.4.3 1 2 2
+vm spine03.p01 cumulus-vx-3.4.3 1 2 2
+vm spine04.p01 cumulus-vx-3.4.3 1 2 2
+vm spine05.p01 cumulus-vx-3.4.3 1 2 2
+vm spine06.p01 cumulus-vx-3.4.3 1 2 2
+vm spine07.p01 cumulus-vx-3.4.3 1 2 2
+vm spine08.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf01.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf02.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf03.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf04.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf05.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf06.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf07.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf08.p01 cumulus-vx-3.4.3 1 2 2
+vm server01.p01 ubuntu-16.04 2 4 4
+vm server02.p01 ubuntu-16.04 2 4 4
+
+vm spine01.p02 cumulus-vx-3.4.3 1 2 2
+vm spine02.p02 cumulus-vx-3.4.3 1 2 2
+vm spine03.p02 cumulus-vx-3.4.3 1 2 2
+vm spine04.p02 cumulus-vx-3.4.3 1 2 2
+vm spine05.p02 cumulus-vx-3.4.3 1 2 2
+vm spine06.p02 cumulus-vx-3.4.3 1 2 2
+vm spine07.p02 cumulus-vx-3.4.3 1 2 2
+vm spine08.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf01.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf02.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf03.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf04.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf05.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf06.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf07.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf08.p02 cumulus-vx-3.4.3 1 2 2
+vm server01.p02 ubuntu-16.04 2 4 4
+vm server02.p02 ubuntu-16.04 2 4 4
 
 network oob-mgmt-server eth0 10.255.0.1 255.255.0.0 public
 service oob-mgmt-server ssh eth0 22 TCP public
@@ -24,16 +51,44 @@ service oob-mgmt-server marathon eth0 8080 TCP public
 service oob-mgmt-server mesosapp eth0 8088 TCP public
 
 network oob-mgmt-server eth1 192.168.0.254 255.255.0.0
-network leaf01 eth0 192.168.0.11 255.255.0.0
-network leaf02 eth0 192.168.0.12 255.255.0.0
-network leaf03 eth0 192.168.0.13 255.255.0.0
-network leaf04 eth0 192.168.0.14 255.255.0.0
-network spine01 eth0 192.168.0.21 255.255.0.0
-network spine02 eth0 192.168.0.22 255.255.0.0
-network server01 eth0 192.168.0.31 255.255.0.0
-network server02 eth0 192.168.0.32 255.255.0.0
-network server03 eth0 192.168.0.33 255.255.0.0
-network server04 eth0 192.168.0.34 255.255.0.0
+
+network spine01.p01 eth0 192.168.1.1 255.255.0.0
+network spine02.p01 eth0 192.168.1.2 255.255.0.0
+network spine03.p01 eth0 192.168.1.3 255.255.0.0
+network spine04.p01 eth0 192.168.1.4 255.255.0.0
+network spine05.p01 eth0 192.168.1.5 255.255.0.0
+network spine06.p01 eth0 192.168.1.6 255.255.0.0
+network spine07.p01 eth0 192.168.1.7 255.255.0.0
+network spine08.p01 eth0 192.168.1.8 255.255.0.0
+network leaf01.p01 eth0 192.168.1.11 255.255.0.0
+network leaf02.p01 eth0 192.168.1.12 255.255.0.0
+network leaf03.p01 eth0 192.168.1.13 255.255.0.0
+network leaf04.p01 eth0 192.168.1.14 255.255.0.0
+network leaf05.p01 eth0 192.168.1.15 255.255.0.0
+network leaf06.p01 eth0 192.168.1.16 255.255.0.0
+network leaf07.p01 eth0 192.168.1.17 255.255.0.0
+network leaf08.p01 eth0 192.168.1.18 255.255.0.0
+network server01.p01 eth0 192.168.1.21 255.255.0.0
+network server02.p01 eth0 192.168.1.22 255.255.0.0
+
+network spine01.p02 eth0 192.168.2.1 255.255.0.0
+network spine02.p02 eth0 192.168.2.2 255.255.0.0
+network spine03.p02 eth0 192.168.2.3 255.255.0.0
+network spine04.p02 eth0 192.168.2.4 255.255.0.0
+network spine05.p02 eth0 192.168.2.5 255.255.0.0
+network spine06.p02 eth0 192.168.2.6 255.255.0.0
+network spine07.p02 eth0 192.168.2.7 255.255.0.0
+network spine08.p02 eth0 192.168.2.8 255.255.0.0
+network leaf01.p02 eth0 192.168.2.11 255.255.0.0
+network leaf02.p02 eth0 192.168.2.12 255.255.0.0
+network leaf03.p02 eth0 192.168.2.13 255.255.0.0
+network leaf04.p02 eth0 192.168.2.14 255.255.0.0
+network leaf05.p02 eth0 192.168.2.15 255.255.0.0
+network leaf06.p02 eth0 192.168.2.16 255.255.0.0
+network leaf07.p02 eth0 192.168.2.17 255.255.0.0
+network leaf08.p02 eth0 192.168.2.18 255.255.0.0
+network server01.p02 eth0 192.168.2.21 255.255.0.0
+network server02.p02 eth0 192.168.2.22 255.255.0.0
 
 autoconfig oob-mgmt-server
 
