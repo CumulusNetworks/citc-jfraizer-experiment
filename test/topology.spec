@@ -91,36 +91,123 @@ network server01.p02 eth0 192.168.2.21 255.255.0.0
 network server02.p02 eth0 192.168.2.22 255.255.0.0
 
 autoconfig oob-mgmt-server
+ # Pod01
+ connect leaf01.p01 swp1 spine01.p01 swp1
+ connect leaf01.p01 swp2 spine01.p01 swp2
+ connect leaf01.p01 swp3 spine01.p02 swp1
+ connect leaf01.p01 swp4 spine01.p02 swp2
+ connect leaf01.p01 swp5 tor01.p01 swp1
+ connect leaf01.p01 swp6 tor02.p01 swp1
 
- connect leaf01 swp51 spine01 swp1
- connect leaf02 swp51 spine01 swp2
- connect leaf03 swp51 spine01 swp3
- connect leaf04 swp51 spine01 swp4
- connect leaf01 swp52 spine02 swp1
- connect leaf02 swp52 spine02 swp2
- connect leaf03 swp52 spine02 swp3
- connect leaf04 swp52 spine02 swp4
- connect leaf01 swp49 leaf02 swp49
- connect leaf01 swp50 leaf02 swp50
- connect leaf03 swp49 leaf04 swp49
- connect leaf03 swp50 leaf04 swp50
- connect spine01 swp31 spine02 swp31
- connect spine01 swp32 spine02 swp32
- connect server01 eth1 leaf01 swp1
- connect server01 eth2 leaf02 swp1
- connect server02 eth1 leaf01 swp2
- connect server02 eth2 leaf02 swp2
- connect server03 eth1 leaf03 swp1
- connect server03 eth2 leaf04 swp1
- connect server04 eth1 leaf03 swp2
- connect server04 eth2 leaf04 swp2
- connect leaf01 swp44 oob-mgmt-server eth2
- connect leaf02 swp44 oob-mgmt-server eth3
- connect leaf01 swp45 leaf01 swp46
- connect leaf01 swp47 leaf01 swp48
- connect leaf02 swp45 leaf02 swp46
- connect leaf02 swp47 leaf02 swp48
- connect leaf03 swp45 leaf03 swp46
- connect leaf03 swp47 leaf03 swp48
- connect leaf04 swp45 leaf04 swp46
- connect leaf04 swp47 leaf04 swp48
+ connect leaf02.p01 swp1 spine02.p01 swp1
+ connect leaf02.p01 swp2 spine02.p01 swp2
+ connect leaf02.p01 swp3 spine02.p02 swp1
+ connect leaf02.p01 swp4 spine02.p02 swp2
+ connect leaf02.p01 swp5 tor01.p01 swp2
+ connect leaf02.p01 swp6 tor02.p01 swp2
+
+ connect leaf03.p01 swp1 spine03.p01 swp1
+ connect leaf03.p01 swp2 spine03.p01 swp2
+ connect leaf03.p01 swp3 spine03.p02 swp1
+ connect leaf03.p01 swp4 spine03.p02 swp2
+ connect leaf03.p01 swp5 tor01.p01 swp3
+ connect leaf03.p01 swp6 tor02.p01 swp3
+
+ connect leaf04.p01 swp1 spine04.p01 swp1
+ connect leaf04.p01 swp2 spine04.p01 swp2
+ connect leaf04.p01 swp3 spine04.p02 swp1
+ connect leaf04.p01 swp4 spine04.p02 swp2
+ connect leaf04.p01 swp5 tor01.p01 swp4
+ connect leaf04.p01 swp6 tor02.p01 swp4
+
+ connect leaf05.p01 swp1 spine05.p01 swp1
+ connect leaf05.p01 swp2 spine05.p01 swp2
+ connect leaf05.p01 swp3 spine05.p02 swp1
+ connect leaf05.p01 swp4 spine05.p02 swp2
+ connect leaf05.p01 swp5 tor01.p01 swp5
+ connect leaf05.p01 swp6 tor02.p01 swp5
+
+ connect leaf06.p01 swp1 spine06.p01 swp1
+ connect leaf06.p01 swp2 spine06.p01 swp2
+ connect leaf06.p01 swp3 spine06.p02 swp1
+ connect leaf06.p01 swp4 spine06.p02 swp2
+ connect leaf06.p01 swp5 tor01.p01 swp6
+ connect leaf06.p01 swp6 tor02.p01 swp6
+
+ connect leaf07.p01 swp1 spine07.p01 swp1
+ connect leaf07.p01 swp2 spine07.p01 swp2
+ connect leaf07.p01 swp3 spine07.p02 swp1
+ connect leaf07.p01 swp4 spine07.p02 swp2
+ connect leaf07.p01 swp5 tor01.p01 swp7
+ connect leaf07.p01 swp6 tor02.p01 swp7
+
+ connect leaf08.p01 swp1 spine08.p01 swp1
+ connect leaf08.p01 swp2 spine08.p01 swp2
+ connect leaf08.p01 swp3 spine08.p02 swp1
+ connect leaf08.p01 swp4 spine08.p02 swp2
+ connect leaf08.p01 swp5 tor01.p01 swp8
+ connect leaf08.p01 swp6 tor02.p01 swp8
+
+ connect tor01.p01 swp9 server01.p01 eth1
+ connect tor02.p01 swp9 server02.p01 eth1
+
+ # Pod02
+ connect leaf01.p02 swp1 spine01.p01 swp3
+ connect leaf01.p02 swp2 spine01.p01 swp4
+ connect leaf01.p02 swp3 spine01.p02 swp3
+ connect leaf01.p02 swp4 spine01.p02 swp4
+ connect leaf01.p02 swp5 tor01.p02 swp1
+ connect leaf01.p02 swp6 tor02.p02 swp1
+
+ connect leaf02.p02 swp1 spine02.p01 swp3
+ connect leaf02.p02 swp2 spine02.p01 swp4
+ connect leaf02.p02 swp3 spine02.p02 swp3
+ connect leaf02.p02 swp4 spine02.p02 swp4
+ connect leaf02.p02 swp5 tor01.p02 swp2
+ connect leaf02.p02 swp6 tor02.p02 swp2
+
+ connect leaf03.p02 swp1 spine03.p01 swp3
+ connect leaf03.p02 swp2 spine03.p01 swp4
+ connect leaf03.p02 swp3 spine03.p02 swp3
+ connect leaf03.p02 swp4 spine03.p02 swp4
+ connect leaf03.p02 swp5 tor01.p02 swp3
+ connect leaf03.p02 swp6 tor02.p02 swp3
+
+ connect leaf04.p02 swp1 spine04.p01 swp3
+ connect leaf04.p02 swp2 spine04.p01 swp4
+ connect leaf04.p02 swp3 spine04.p02 swp3
+ connect leaf04.p02 swp4 spine04.p02 swp4
+ connect leaf04.p02 swp5 tor01.p02 swp4
+ connect leaf04.p02 swp6 tor02.p02 swp4
+
+ connect leaf05.p02 swp1 spine05.p01 swp3
+ connect leaf05.p02 swp2 spine05.p01 swp4
+ connect leaf05.p02 swp3 spine05.p02 swp3
+ connect leaf05.p02 swp4 spine05.p02 swp4
+ connect leaf05.p02 swp5 tor01.p02 swp5
+ connect leaf05.p02 swp6 tor02.p02 swp5
+
+ connect leaf06.p02 swp1 spine06.p01 swp3
+ connect leaf06.p02 swp2 spine06.p01 swp4
+ connect leaf06.p02 swp3 spine06.p02 swp3
+ connect leaf06.p02 swp4 spine06.p02 swp4
+ connect leaf06.p02 swp5 tor01.p02 swp6
+ connect leaf06.p02 swp6 tor02.p02 swp6
+
+ connect leaf07.p02 swp1 spine07.p01 swp3
+ connect leaf07.p02 swp2 spine07.p01 swp4
+ connect leaf07.p02 swp3 spine07.p02 swp3
+ connect leaf07.p02 swp4 spine07.p02 swp4
+ connect leaf07.p02 swp5 tor01.p02 swp7
+ connect leaf07.p02 swp6 tor02.p02 swp7
+
+ connect leaf08.p02 swp1 spine08.p01 swp3
+ connect leaf08.p02 swp2 spine08.p01 swp4
+ connect leaf08.p02 swp3 spine08.p02 swp3
+ connect leaf08.p02 swp4 spine08.p02 swp4
+ connect leaf08.p02 swp5 tor01.p02 swp8
+ connect leaf08.p02 swp6 tor02.p02 swp8
+
+ connect tor01.p02 swp9 server01.p02 eth1
+ connect tor02.p02 swp9 server02.p02 eth1
+
