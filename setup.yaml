@@ -2,9 +2,9 @@
 - hosts: switches
   roles:
   - switch-netq
-  become: true
+  become: false
 
 - hosts: servers
   roles:
   - server-netq
-  become: true
+  become: false
