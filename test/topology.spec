@@ -102,7 +102,7 @@ network server01.p02 eth0 192.168.2.31 255.255.0.0
 network server02.p02 eth0 192.168.2.32 255.255.0.0
 
 network h3c01 eth0 192.168.3.1 255.255.0.0
-network h3c01 eth0 192.168.3.2 255.255.0.0
+network h3c02 eth0 192.168.3.2 255.255.0.0
 
 
 autoconfig oob-mgmt-server
