@@ -3,6 +3,10 @@
 # switch management groups
 #
 
+[h3c]
+h3c01
+h3c02
+
 [spines]
 spine01.p01
 spine02.p01
@@ -50,6 +54,7 @@ tor02.p02
 spines
 leafs
 tors
+h3c
 
 #-------------------------------------------------------------------------------
 #
