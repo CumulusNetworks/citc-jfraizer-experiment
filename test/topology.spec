@@ -1,3 +1,6 @@
+vm h3c01 cumulus-vx-3.6.0 1 2 2
+vm h3c02 cumulus-vx-3.6.0 1 2 2
+
 vm oob-mgmt-server netq-1.3.0 2 10 40
 
 vm spine01.p01 cumulus-vx-3.4.3 1 2 2
@@ -98,7 +101,19 @@ network tor02.p02 eth0 192.168.2.22 255.255.0.0
 network server01.p02 eth0 192.168.2.31 255.255.0.0
 network server02.p02 eth0 192.168.2.32 255.255.0.0
 
+network h3c01 eth0 192.168.3.1 255.255.0.0
+network h3c01 eth0 192.168.3.2 255.255.0.0
+
+
 autoconfig oob-mgmt-server
+
+#h3c
+connect h3c01 swp1 spine01.p01 swp5
+connect h3c01 swp2 spine01.p02 swp5
+connect h3c02 swp1 spine08.p01 swp5
+connect h3c02 swp2 spine08.p02 swp5
+
+
  # Pod01
  connect leaf01.p01 swp1 spine01.p01 swp1
  connect leaf01.p01 swp2 spine01.p01 swp2
