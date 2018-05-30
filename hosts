@@ -6,24 +6,26 @@
 [h3c]
 h3c01
 h3c02
+h3c03
+h3c04
 
 [spines]
-spine01.p01
-spine02.p01
-spine03.p01
-spine04.p01
-spine05.p01
-spine06.p01
-spine07.p01
-spine08.p01
-spine01.p02
-spine02.p02
-spine03.p02
-spine04.p02
-spine05.p02
-spine06.p02
-spine07.p02
-spine08.p02
+spine01.f01
+spine02.f01
+spine03.f01
+spine04.f01
+spine05.f01
+spine06.f01
+spine07.f01
+spine08.f01
+spine01.f02
+spine02.f02
+spine03.f02
+spine04.f02
+spine05.f02
+spine06.f02
+spine07.f02
+spine08.f02
 
 
 [leafs]
