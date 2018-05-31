@@ -1,0 +1,57 @@
+#!/bin/bash
+echo "Configuring H3C..."
+for i in h3c*
+do 
+echo -e "\n$i\n============"
+echo "Copying config bundle."
+scp $i/configs.tgz $i:
+echo "Applying configuration."
+ssh $i "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null 
+echo
+done
+
+echo "Configuring SPINES..."
+for i in spine*
+do 
+echo -e "\n$i\n============"
+echo "Copying config bundle."
+scp $i/configs.tgz $i:
+echo "Applying configuration."
+ssh $i "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null 
+echo
+done
+
+echo "Configuring LEAFS..."
+for i in leaf*
+do 
+echo -e "\n$i\n============"
+echo "Copying config bundle."
+scp $i/configs.tgz $i:
+echo "Applying configuration."
+ssh $i "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null 
+echo
+done
+
+echo "Configuring TORS..."
+for i in tor*
+do 
+echo -e "\n$i\n============"
+echo "Copying config bundle."
+scp $i/configs.tgz $i:
+echo "Applying configuration."
+ssh $i "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null 
+echo
+done
+
+echo "Configuring SERVERS..."
+for i in server*
+do 
+echo -e "\n$i\n============"
+echo "Copying config bundle."
+scp $i/configs.tgz $i:
+echo "Applying configuration."
+ssh $i "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo apt install traceroute" >/dev/null 2>/dev/null 
+echo
+done
+
+
