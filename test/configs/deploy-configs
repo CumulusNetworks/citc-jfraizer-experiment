@@ -1,72 +1,42 @@
 #!/bin/bash
-echo "Configuring H3C..."
-for i in h3c*
-do 
-echo -e "\n$i\n============"
-echo "Copying config bundle."
-cd $i
+
+for i in $1*/
+do
+DEVICE=""
+DEVICE=$(echo $i| cut -d'/' -f 1)
+cd $i >/dev/null 2>/dev/null||  continue
+echo -e "\n$DEVICE\n============"
+echo "Copying config bundle:"
 tar zcf ./configs.tgz ./etc
-scp ./configs.tgz $i:
+scp ./configs.tgz $DEVICE:
 cd ..
-echo "Applying configuration."
-ssh $i "cd /; sudo tar xf ~/configs.tgz; sudo chattr +i /etc/resolv.conf; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null 
-echo
+case $i in
+spine*)
+  echo "Applying configuration."
+  ssh $DEVICE "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null
+  echo
+  ;;
+leaf*)
+  echo "Applying configuration."
+  ssh $DEVICE "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null
+  echo
+  ;;
+tor*)
+  echo "Applying configuration."
+  ssh $DEVICE "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null
+  echo
+  ;;
+server*)
+  echo "Applying configuration."
+  ssh $DEVICE "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service" >/dev/null 2>/dev/null
+  echo
+  ;;
+h3c*)
+  echo "Applying configuration."
+  ssh $DEVICE "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo systemctl restart frr.service" >/dev/null 2>/dev/null
+  echo
+  ;;
+esac
 done
 
-echo "Configuring SPINES..."
-for i in spine*
-do 
-echo -e "\n$i\n============"
-echo "Copying config bundle."
-cd $i
-tar zcf ./configs.tgz ./etc
-scp ./configs.tgz $i:
-cd ..
-echo "Applying configuration."
-ssh $i "sudo chattr -i /etc/resolv.conf; cd /; sudo tar xf ~/configs.tgz; sudo chattr +i /etc/resolv.conf; sudo systemctl restart networking.service; sudo systemctl restart frr.service; sudo ip route del default" >/dev/null 2>/dev/null 
-echo
-done
-
-echo "Configuring LEAFS..."
-for i in leaf*
-do 
-echo -e "\n$i\n============"
-echo "Copying config bundle."
-cd $i
-tar zcf ./configs.tgz ./etc
-scp ./configs.tgz $i:
-cd ..
-echo "Applying configuration."
-ssh $i "sudo chattr -i /etc/resolv.conf; cd /; sudo tar xf ~/configs.tgz; sudo chattr +i /etc/resolv.conf; sudo systemctl restart networking.service; sudo systemctl restart frr.service; sudo ip route del default" >/dev/null 2>/dev/null 
-echo
-done
-
-echo "Configuring TORS..."
-for i in tor*
-do 
-echo -e "\n$i\n============"
-echo "Copying config bundle."
-cd $i
-tar zcf ./configs.tgz ./etc
-scp ./configs.tgz $i:
-cd ..
-echo "Applying configuration."
-ssh $i "sudo chattr -i /etc/resolv.conf; cd /; sudo tar xf ~/configs.tgz; sudo chattr +i /etc/resolv.conf; sudo systemctl restart networking.service; sudo systemctl restart frr.service; sudo ip route del default" >/dev/null 2>/dev/null 
-echo
-done
-
-echo "Configuring SERVERS..."
-for i in server*
-do 
-echo -e "\n$i\n============"
-echo "Copying config bundle."
-cd $i
-tar zcf ./configs.tgz ./etc
-scp ./configs.tgz $i:
-cd ..
-echo "Applying configuration."
-ssh $i "cd /; sudo tar xf ~/configs.tgz; sudo systemctl restart networking.service; sudo apt install traceroute" >/dev/null 2>/dev/null 
-echo
-done
-
-
+echo "DONE."
