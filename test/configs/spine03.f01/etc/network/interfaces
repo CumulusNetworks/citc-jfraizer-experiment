@@ -3,6 +3,8 @@ iface lo inet loopback
     address 172.30.1.3/32
 auto eth0
 iface eth0 inet dhcp
+    vrf mgmt
+
 auto swp1
 iface swp1
 auto swp2
@@ -26,3 +28,8 @@ iface swp7
 auto swp8
 iface swp8
     address 10.172.4.5/31
+
+auto mgmt
+iface mgmt
+    address 127.0.0.1/8
+    vrf-table auto

@@ -1,0 +1,2 @@
+git config --global user.email "jfraizer@cumulusnetworks.com"
+git config --global user.name "John Fraizer"
