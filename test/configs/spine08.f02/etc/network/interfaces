@@ -1,6 +1,6 @@
 auto lo
 iface lo inet loopback
-    address 172.30.2.8/32
+    address 10.26.0.47/32
 auto eth0
 iface eth0 inet dhcp
     vrf mgmt
