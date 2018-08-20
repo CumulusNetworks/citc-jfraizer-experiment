@@ -15,8 +15,8 @@ vm spine05.f01 cumulus-vx-3.4.3 1 2 2
 vm spine06.f01 cumulus-vx-3.4.3 1 2 2
 vm spine07.f01 cumulus-vx-3.4.3 1 2 2
 vm spine08.f01 cumulus-vx-3.4.3 1 2 2
-vm leaf01.p01 cumulus-vx-3.4.3 1 2 2
-vm leaf02.p01 cumulus-vx-3.4.3 1 2 2
+vm leaf01.p01 cumulus-vx-3.5.3 1 2 2
+vm leaf02.p01 cumulus-vx-3.6.2 1 2 2
 vm leaf03.p01 cumulus-vx-3.4.3 1 2 2
 vm leaf04.p01 cumulus-vx-3.4.3 1 2 2
 vm leaf05.p01 cumulus-vx-3.4.3 1 2 2
