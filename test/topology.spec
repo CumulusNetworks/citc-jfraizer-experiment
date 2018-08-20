@@ -23,8 +23,8 @@ vm leaf05.p01 cumulus-vx-3.4.3 1 2 2
 vm leaf06.p01 cumulus-vx-3.4.3 1 2 2
 vm leaf07.p01 cumulus-vx-3.4.3 1 2 2
 vm leaf08.p01 cumulus-vx-3.4.3 1 2 2
-vm tor01.p01 cumulus-vx-3.4.3 1 2 2
-vm tor02.p01 cumulus-vx-3.4.3 1 2 2
+vm tor01.p01 cumulus-vx-3.5.3 1 2 2
+vm tor02.p01 cumulus-vx-3.6.2 1 2 2
 vm server01.p01 ubuntu-16.04 2 4 4
 vm server02.p01 ubuntu-16.04 2 4 4
 
