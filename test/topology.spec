@@ -7,7 +7,7 @@ vm h3c02 cumulus-vx-3.6.0 1 2 2
 vm h3c03 cumulus-vx-3.6.0 1 2 2
 vm h3c04 cumulus-vx-3.6.0 1 2 2
 
-vm spine01.f01 cumulus-vx-3.4.3 1 2 2
+vm spine01.f01 cumulus-vx-3.5.3 1 2 2
 vm spine02.f01 cumulus-vx-3.4.3 1 2 2
 vm spine03.f01 cumulus-vx-3.4.3 1 2 2
 vm spine04.f01 cumulus-vx-3.4.3 1 2 2
@@ -28,7 +28,7 @@ vm tor02.p01 cumulus-vx-3.6.2 1 2 2
 vm server01.p01 ubuntu-16.04 2 4 4
 vm server02.p01 ubuntu-16.04 2 4 4
 
-vm spine01.f02 cumulus-vx-3.4.3 1 2 2
+vm spine01.f02 cumulus-vx-3.5.3 1 2 2
 vm spine02.f02 cumulus-vx-3.4.3 1 2 2
 vm spine03.f02 cumulus-vx-3.4.3 1 2 2
 vm spine04.f02 cumulus-vx-3.4.3 1 2 2
@@ -36,7 +36,7 @@ vm spine05.f02 cumulus-vx-3.4.3 1 2 2
 vm spine06.f02 cumulus-vx-3.4.3 1 2 2
 vm spine07.f02 cumulus-vx-3.4.3 1 2 2
 vm spine08.f02 cumulus-vx-3.4.3 1 2 2
-vm leaf01.p02 cumulus-vx-3.4.3 1 2 2
+vm leaf01.p02 cumulus-vx-3.5.3 1 2 2
 vm leaf02.p02 cumulus-vx-3.4.3 1 2 2
 vm leaf03.p02 cumulus-vx-3.4.3 1 2 2
 vm leaf04.p02 cumulus-vx-3.4.3 1 2 2
